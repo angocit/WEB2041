@@ -11,7 +11,10 @@ class ProductModel
     // Viết truy vấn danh sách sản phẩm 
     public function getAllProduct()
     {
-        
+        $sql = "SELECT * from products limit 10";
+        $stmt = $this->conn->prepare($sql); 
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
     public function create($name,$image,$price){
         $sql = "INSERT INTO products (name,image,price) VALUES (:name,:image,:price)";

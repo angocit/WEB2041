@@ -6,7 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><?php echo $title; ?></h1>
-    <h2><?php echo $thoiTiet; ?></h2>
+    <h1>Danh sách sản phẩm</h1>
+    <ul>
+    <?php
+        foreach ($products as $key=>$product){
+            extract($product);
+        ?>
+        <li>
+            <h3><?= $name ?></h3>
+            <span><?= $price ?></span>
+        </li>
+        <?php
+        }
+    ?>
+    </ul>
 </body>
 </html>
