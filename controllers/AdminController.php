@@ -1,0 +1,18 @@
+<?php
+// có class chứa các function thực thi xử lý logic 
+class AdminController
+{
+    public $modelProduct;
+
+    public function __construct()
+    {
+        $this->modelProduct = new ProductModel();
+    }
+
+    public function Dashboard()
+    {
+        $title = "Đây là trang chủ nhé hahaa";
+        $thoiTiet = "Hôm nay trời có vẻ là mưa";
+        require_once './views/admin/dashboard.php';
+    }
+}
