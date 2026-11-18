@@ -17,6 +17,7 @@ if (isset($_GET['mode'])&&$_GET['mode']=='admin'){
     // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
     match ($act) {
         '/'=>(new AdminController())->Dashboard(),
+        'products'=>(new ProductController())->Products(),
     };
 }
 else {

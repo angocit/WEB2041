@@ -15,4 +15,16 @@ class ProductController
         $thoiTiet = "Hôm nay trời có vẻ là mưa";
         require_once './views/client/trangchu.php';
     }
+    public function Products(){
+        if (isset($_POST['submit'])){
+            $name = $_POST['name'];
+            $image = $_POST['image'];
+            $price = $_POST['price'];
+            $id = $this->modelProduct->create($name,$image,$price);
+            echo "Thêm mới thành công, id là: $id";
+        }
+        else {
+        require_once './views/admin/products.php';
+        }
+    }
 }
